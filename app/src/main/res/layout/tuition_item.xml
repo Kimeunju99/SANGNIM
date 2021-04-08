@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--리스트 아이템으로 보여줄 진행중인 과외 인터페이스-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/teal_200"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/category"
+        android:layout_toRightOf="@+id/category"
+        android:layout_marginRight="5dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/category"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/category"
+        android:layout_below="@+id/teacher"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

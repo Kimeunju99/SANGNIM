@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -14,24 +17,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_options
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        //supportActionBar?.setDisplayShowTitleEnabled(false) //기본 메뉴바 삭제
+        setSupportActionBar(findViewById(R.id.toolbar))
+    }
+    //툴바
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.tuition_menu, menu)
+
+        var add_T = menu?.findItem(R.id.add_tui)
+        //return false = 메뉴 숨김
+        return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-        super.onCreateOptionsMenu(menu)
-        var mInflater: MenuInflater = menuInflater
-        mInflater.inflate(R.menu.menu_lessonlist, menu)
-        return true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.add_tui) {
+            // TODO: 2021-04-05 새 과외 만드는 페이지로 go
+        }
+        return super.onOptionsItemSelected(item)
     }
+
+    fun go_tui(view: View) {
+
+    }
+
+
 }

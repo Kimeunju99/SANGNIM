@@ -5,4 +5,13 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_options">Options</string>
+    <string name="tui_categoty">카테고리 선택</string>
+    <string-array name="categoty_list">
+        <item>국어</item>
+        <item>수학</item>
+        <item>영어</item>
+        <item>탐구</item>
+        <item>정보</item>
+        <item>기타</item>
+    </string-array>
 </resources>
