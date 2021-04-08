@@ -1,4 +1,5 @@
-package com.example.app_home
+package com.example.sangnim
+
 
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,7 @@ class WorklistAdapter (val workList:ArrayList<Worklist>): RecyclerView.Adapter<W
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return WorkListViewHolder(view).apply {
             itemView.setOnClickListener {
-                
+
             }
         }
     }
