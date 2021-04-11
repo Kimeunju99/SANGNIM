@@ -24,19 +24,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
+
+        <!--버튼 작동 코딩 필요-->
     <Button
         android:id="@+id/dig_OK"
         android:text="확인"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:onClick="onClick"/>
+        android:layout_weight="0.5"/>
     <Button
         android:id="@+id/dig_CANCLE"
         android:text="취소"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:onClick="onClick"/>
+        android:layout_weight="0.5"/>
     </LinearLayout>
 </LinearLayout>

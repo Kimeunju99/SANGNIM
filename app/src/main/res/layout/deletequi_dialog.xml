@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--선생님 화면에서 퀴즈 문제 클릭 시 삭제할 수 있도록 대화상자 팝업-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:paddingLeft="5dp"
+        android:text="경고"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_qui"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="선택한 퀴즈 내용 전문"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:background="@drawable/layoutline"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="*확인을 누르면 퀴즈가 삭제됩니다. 삭제된 퀴즈는 복구가 불가능합니다."
+        android:textSize="10dp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <!--버튼 작동 코딩 필요-->
+        <Button
+            android:id="@+id/dig_OK"
+            android:text="확인"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+        <Button
+            android:id="@+id/dig_CANCLE"
+            android:text="취소"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+</LinearLayout>

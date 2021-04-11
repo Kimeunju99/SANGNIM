@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    tools:context=".TuitionActivity">
+    <!--학생의 퀴즈 페이지(quiz_student.xml)에서 아이템을 클릭 시-->
+    <!--팝업 창-->
+    <TextView
+        android:id="@+id/solve_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:text="문제 내용"
+        android:textSize="14dp"
+        android:scrollbars="vertical"
+        android:background="@drawable/layoutline"/>
+
+    <RadioGroup
+        android:id="@+id/group_OX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/solve_quiz"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/ans_O_sol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O" />
+
+        <RadioButton
+            android:id="@+id/ans_X_sol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="X" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_OX"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <!--버튼 클릭 이벤트 추가 필요-->
+        <Button
+            android:id="@+id/solveok_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제출하기" />
+
+        <Button
+            android:id="@+id/solveno_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/solveok_quiz"
+            android:text="취소" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    tools:context=".TuitionActivity">
+    <!--선생님이 퀴즈 추가 플로팅 버튼 클릭 시(quiz_teacher.xml에 있음) 팝업되는 창-->
+    <!--전체 코딩 필요-->
+    <EditText
+        android:id="@+id/add_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:hint="문제 작성"
+        android:textSize="14dp"
+        android:scrollbars="vertical"
+        android:background="@drawable/layoutline"/>
+
+    <RadioGroup
+        android:id="@+id/group_OX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_quiz"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/ans_O"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O" />
+
+        <RadioButton
+            android:id="@+id/ans_X"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="X" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_OX"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <!--버튼 클릭 이벤트 추가: onClick -->
+        <Button
+            android:id="@+id/okB_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록" />
+
+        <Button
+            android:id="@+id/cancelB_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/okB_quiz"
+            android:text="취소" />
+    </RelativeLayout>
+
+</RelativeLayout>
