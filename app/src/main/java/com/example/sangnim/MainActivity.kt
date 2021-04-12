@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //홈 페이지에 과제진행률을 나타내주는 리스트 ; Worklist,WorklistAdapter
         val workList = arrayListOf(
             Worklist(R.drawable.work,"4.4 ~ 4.8","독해","홍길동"),
             Worklist(R.drawable.work,"4.8 ~ 4.10","비문학","홍"),
@@ -31,6 +33,35 @@ class MainActivity : AppCompatActivity() {
         work_list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         work_list.setHasFixedSize(true)
         work_list.adapter = WorklistAdapter(workList)
+
+       // val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,workList)
+        //WorklistAdapter.adapter = adapter
+
+
+        //supportActionBar?.setDisplayShowTitleEnabled(false) //기본 메뉴바 삭제
+        setSupportActionBar(findViewById(R.id.toolbar))
     }
+
+
+    //툴바
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.tuition_menu, menu)
+
+        var add_T = menu?.findItem(R.id.add_tui)
+        //return false = 메뉴 숨김
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.add_tui) {
+            // TODO: 2021-04-05 새 과외 만드는 페이지로 go
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun go_tui(view: View) {
+
+    }
+
 
 }
