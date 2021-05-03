@@ -10,18 +10,21 @@
         android:id="@+id/constraintLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-42dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/list">
 
@@ -45,12 +48,13 @@
                 android:text="user_name"
                 app:layout_constraintStart_toEndOf="@+id/user_image"
                 app:layout_constraintTop_toTopOf="@+id/user_image" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/list"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="29dp"
+            android:layout_height="15dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +62,7 @@
             app:srcCompat="@drawable/menu" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_chat"
             android:layout_width="148dp"
             android:layout_height="101dp"
             android:layout_marginStart="50dp"
@@ -68,40 +72,34 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_work"
             android:layout_width="148dp"
             android:layout_height="101dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="124dp"
-            android:text="퀴즈"
-            app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginStart="16dp"
+            android:text="과외"
+            app:layout_constraintStart_toEndOf="@+id/btn_chat"
+            app:layout_constraintTop_toTopOf="@+id/btn_chat" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_quiz"
             android:layout_width="148dp"
             android:layout_height="101dp"
-            android:layout_marginStart="50dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:text="퀴즈"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_chat"
+            app:layout_constraintStart_toStartOf="@+id/btn_chat"
+            app:layout_constraintTop_toBottomOf="@+id/btn_chat" />
+
+        <Button
+            android:id="@+id/btn_lastwork"
+            android:layout_width="148dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="16dp"
             android:text="지난숙제목록"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.136" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="148dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="과외"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button3"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.136" />
+            app:layout_constraintStart_toEndOf="@+id/btn_quiz"
+            app:layout_constraintTop_toTopOf="@+id/btn_quiz" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -112,7 +110,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout1"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/work_list"
@@ -120,8 +118,11 @@
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

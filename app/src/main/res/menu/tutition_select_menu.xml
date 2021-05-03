@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/work_list"
+      android:enabled="true"
+      android:title="숙제"/>
+    <item
+        android:id="@+id/lastwork_list"
+        android:enabled="true"
+        android:title="지난 숙제"/>
+
+
+</menu>

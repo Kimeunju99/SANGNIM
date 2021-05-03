@@ -13,6 +13,7 @@
         android:text="경고"
         android:textColor="@color/white"
         android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="130dp"
@@ -24,19 +25,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
-
-        <!--버튼 작동 코딩 필요-->
     <Button
         android:id="@+id/dig_OK"
         android:text="확인"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"/>
+        android:layout_weight="0.5"
+        android:onClick="onClick"/>
     <Button
         android:id="@+id/dig_CANCLE"
         android:text="취소"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"/>
+        android:layout_weight="0.5"
+        android:onClick="onClick"/>
     </LinearLayout>
 </LinearLayout>

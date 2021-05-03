@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <!--국영수 등 구분을 위한 카테고리별 색상-->
     <TextView
         android:id="@+id/category"
         android:layout_width="80dp"
@@ -19,7 +18,6 @@
         android:textSize="17dp"
         android:textStyle="bold" />
 
-    <!--text 부분을 진행 중인 과외 정보로 바꾸는 코딩 필요-->
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -27,10 +25,8 @@
         android:layout_alignTop="@+id/category"
         android:layout_toRightOf="@+id/category"
         android:layout_marginRight="5dp"
-        android:text="과외명"
         android:textSize="20dp"
         android:textStyle="bold"/>
-
     <TextView
         android:id="@+id/teacher"
         android:layout_width="match_parent"
@@ -39,7 +35,6 @@
         android:layout_below="@+id/title"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:text="선생님명"
         android:textSize="15dp"
         android:textStyle="bold"/>
     <TextView
@@ -50,7 +45,6 @@
         android:layout_below="@+id/teacher"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:text="학생명"
         android:textSize="15dp"
         android:textStyle="bold"/>
 

@@ -32,7 +32,7 @@
             app:srcCompat="@drawable/work" />
 
         <TextView
-            android:id="@+id/work_name"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -40,21 +40,21 @@
             android:text="과목이름"
             app:layout_constraintBottom_toBottomOf="@+id/work_image"
             app:layout_constraintStart_toEndOf="@+id/work_image"
-            app:layout_constraintTop_toBottomOf="@+id/work_date" />
+            app:layout_constraintTop_toBottomOf="@+id/student" />
 
         <TextView
-            android:id="@+id/work_tutor"
+            android:id="@+id/teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
             android:text="과외선생님이름"
             app:layout_constraintBottom_toBottomOf="@+id/work_image"
-            app:layout_constraintStart_toEndOf="@+id/work_name"
-            app:layout_constraintTop_toBottomOf="@+id/work_date" />
+            app:layout_constraintStart_toEndOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/student" />
 
         <TextView
-            android:id="@+id/work_date"
+            android:id="@+id/student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

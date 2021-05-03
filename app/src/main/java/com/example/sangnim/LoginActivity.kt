@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_work.*
 
 //로그인 페이지
 class LoginActivity : AppCompatActivity() {
@@ -19,13 +20,17 @@ class LoginActivity : AppCompatActivity() {
 
         //회원가입버튼
         btn_register.setOnClickListener{
-            //val intent :Intent = Intent(LoginActivity.this,RegisterActivity.class)
-
+            val intent = Intent(this,RegisterActivity::class.java)
+            //val intent = Intent(this, work_new::class.java)
+            startActivity(intent)
 
         }
         
         //로그인버튼
+        //DB에서 회원확인시 MainActicity로 이동
         btn_login.setOnClickListener{
+            val intent =Intent(this, MainActivity::class.java)
+            startActivity(intent)
             
         }
     }
