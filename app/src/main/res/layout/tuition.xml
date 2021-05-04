@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TuitionActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/bottomblue"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:theme="?attr/actionBarTheme"/>
+    <!--과외 추가 버튼-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addtui_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6799FF"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="25dp"
+        app:rippleColor="#4374D9" /> <!--버튼 눌렸을 때 색상-->
+    <!--클릭 시 이벤트 추가 필요-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+    <!--진행 중인 과외 목록-->
+    <ListView
+        android:id="@+id/list_tui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+    </ListView>
+    <!--리스트 아이템 레이아웃: tui_item.xml-->
 
-        <ListView
-            android:id="@+id/list_tui"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></ListView>
-    </RelativeLayout>
 </RelativeLayout>

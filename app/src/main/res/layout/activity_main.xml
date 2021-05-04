@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-42dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-42dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
@@ -58,16 +58,16 @@
                     app:layout_constraintTop_toTopOf="@+id/user_image" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/list"
-            android:layout_width="29dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:onClick="menubtn_Click"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/menu" />
+            <ImageView
+                android:id="@+id/list"
+                android:layout_width="29dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:onClick="menubtn_Click"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/menu" />
 
             <Button
                 android:id="@+id/btn_chat"
@@ -80,38 +80,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btn_work"
-            android:layout_width="148dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="16dp"
-            android:onClick="homebtn4_Click"
-            android:text="과외"
-            app:layout_constraintStart_toEndOf="@+id/btn_chat"
-            app:layout_constraintTop_toTopOf="@+id/btn_chat" />
+            <Button
+                android:id="@+id/btn_work"
+                android:layout_width="148dp"
+                android:layout_height="101dp"
+                android:layout_marginStart="16dp"
+                android:onClick="homebtn4_Click"
+                android:text="과외"
+                app:layout_constraintStart_toEndOf="@+id/btn_chat"
+                app:layout_constraintTop_toTopOf="@+id/btn_chat" />
 
-        <Button
-            android:id="@+id/btn_quiz"
-            android:layout_width="148dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="16dp"
-            android:onClick="homebtn4_Click"
-            android:text="퀴즈"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btn_chat"
-            app:layout_constraintStart_toStartOf="@+id/btn_chat"
-            app:layout_constraintTop_toBottomOf="@+id/btn_chat" />
+            <Button
+                android:id="@+id/btn_quiz"
+                android:layout_width="148dp"
+                android:layout_height="101dp"
+                android:layout_marginTop="16dp"
+                android:onClick="homebtn4_Click"
+                android:text="퀴즈"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_chat"
+                app:layout_constraintStart_toStartOf="@+id/btn_chat"
+                app:layout_constraintTop_toBottomOf="@+id/btn_chat" />
 
-        <Button
-            android:id="@+id/btn_lastwork"
-            android:layout_width="148dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="16dp"
-            android:onClick="homebtn4_Click"
-            android:text="지난숙제목록"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_quiz"
-            app:layout_constraintTop_toTopOf="@+id/btn_quiz" />
+            <Button
+                android:id="@+id/btn_lastwork"
+                android:layout_width="148dp"
+                android:layout_height="101dp"
+                android:layout_marginStart="16dp"
+                android:onClick="homebtn4_Click"
+                android:text="지난숙제목록"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_quiz"
+                app:layout_constraintTop_toTopOf="@+id/btn_quiz" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
