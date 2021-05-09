@@ -28,13 +28,15 @@ class RegisterActivity : AppCompatActivity() {
 
         //현재 edittext에 입력되어있는 값을 가져온다
         btn_register.setOnClickListener{
-            val userID =et_id.getText().toString()
+            val userID =et_id.getText().toString().toInt()
             val userPass =et_pass.getText().toString()
             val userName =et_name.getText().toString()
-            val userAge =et_age.getText().toString()
+            val userAge =et_age.getText().toString().toInt()
 
             //실제적인 회원가입 요청, Response.Listener <String> 이용
+            Retrofit.joinReq(userID, userPass, userName, userAge){
 
+            }
 
             }
         //서버로 volley를 이용해서 요청
