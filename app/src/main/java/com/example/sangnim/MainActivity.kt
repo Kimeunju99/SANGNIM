@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,22 +33,27 @@ class MainActivity : AppCompatActivity() {
     private fun setExpandableList() {
         val parentList = mutableListOf("과외", "숙제", "퀴즈", "채팅", "마이페이지")
         val childList = mutableListOf( //소분류
-            mutableListOf("추가", "진행 중 과외", "일정 관리"), //과외
-            mutableListOf("제출", "관리"), //숙제
+            mutableListOf("추가", "진행 중 과외"), //과외
+            mutableListOf(), //숙제
             mutableListOf(), mutableListOf(), mutableListOf() // 퀴즈, 채팅, 마이페이지
         )
         val expandableAdapter = ExpandableListAdapter(this, parentList, childList)
         el_menu.setAdapter(expandableAdapter) //el_menu: 메인 레이아웃에서 ExpandableListView ID
         el_menu.setOnGroupClickListener { parent, v, groupPosition, id ->
-            when(groupPosition){
+            when (groupPosition) {
+                1 -> { //숙제
+                    dl_container.closeDrawer(nv_drawer)
+                    val intent = Intent(this, WorkActivity::class.java)
+                    startActivity(intent)
+                }
                 2 -> { //퀴즈
                     dl_container.closeDrawer(nv_drawer)
                     val intent = Intent(this, QuizActivity::class.java)
                     startActivity(intent)
                 }
-                3 -> { //채팅 TODO: 채팅 페이지 준비되면 액티비티 수정하기
+                3 -> { //채팅
                     dl_container.closeDrawer(nv_drawer)
-                    val intent = Intent(this, TuitionActivity::class.java)
+                    val intent = Intent(this, ChatActivity::class.java)
                     startActivity(intent)
                 }
                 4 -> {//마이페이지
@@ -60,36 +66,17 @@ class MainActivity : AppCompatActivity() {
         }
         el_menu.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
             //TODO: 페이지 준비되면 액티비티 수정하기
-            when(groupPosition){
+            when (groupPosition) {
                 0 -> { //과외
-                    when(childPosition){
-                        0 ->{//추가
+                    when (childPosition) {
+                        0 -> {//추가
                             dl_container.closeDrawer(nv_drawer)
                             //val intent = Intent(this, MypageActivity::class.java)
                             startActivity(intent)
                         }
-                        1 ->{//진행 중 과외
+                        1 -> {//진행 중 과외
                             dl_container.closeDrawer(nv_drawer)
-                            //val intent = Intent(this, MypageActivity::class.java)
-                            startActivity(intent)
-                        }
-                        2 ->{//일정 관리
-                            dl_container.closeDrawer(nv_drawer)
-                            //val intent = Intent(this, MypageActivity::class.java)
-                            startActivity(intent)
-                        }
-                    }
-                }
-                1 -> { //숙제
-                    when(childPosition){
-                        0 ->{ //제출
-                            dl_container.closeDrawer(nv_drawer)
-                            //val intent = Intent(this, MypageActivity::class.java)
-                            startActivity(intent)
-                        }
-                        1 ->{ //관리
-                            dl_container.closeDrawer(nv_drawer)
-                            //val intent = Intent(this, MypageActivity::class.java)
+                            val intent = Intent(this, TuitionActivity::class.java)
                             startActivity(intent)
                         }
                     }
@@ -101,11 +88,10 @@ class MainActivity : AppCompatActivity() {
 
     //홈에서 4개의 버튼 클릭 시 페이지 이동
     fun homebtn4_Click(view: View) {
-        //채팅 TODO: 채팅, 숙제 페이지로 액티비티 수정하기
-        when(view.id){
+        when (view.id) {
             R.id.btn_chat -> { //채팅 버튼 클릭 시 화면 이동
-                //val intent = Intent(this, 채팅클래스이름::class.java)
-                //startActivity(intent)
+                val intent = Intent(this, ChatActivity::class.java)
+                startActivity(intent)
             }
             R.id.btn_work -> { //과외 버튼 클릭 시 화면 이동
                 val intent = Intent(this, TuitionActivity::class.java)
@@ -116,11 +102,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.btn_lastwork -> {//지난 숙제 버튼 클릭 시 화면 이동
-                //val intent = Intent(this, 숙제..클래스이름::class.java)
-                //startActivity(intent)
+                val intent = Intent(this, WorkActivity::class.java)
+                startActivity(intent)
             }
         }
     }
+
     //메뉴 버튼 클릭 시 드로어 열기
     fun menubtn_Click(view: View) {
         dl_container.openDrawer(nv_drawer)
@@ -128,10 +115,9 @@ class MainActivity : AppCompatActivity() {
 
     //뒤로가기 눌렀을 때
     override fun onBackPressed() {
-        if(dl_container.isDrawerOpen(nv_drawer)){ //메뉴가 열려 있으면 닫음
+        if (dl_container.isDrawerOpen(nv_drawer)) { //메뉴가 열려 있으면 닫음
             dl_container.closeDrawer(nv_drawer)
-        }
-        else
+        } else
             super.onBackPressed()
     }
 
