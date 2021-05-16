@@ -14,8 +14,19 @@
             android:id="@+id/list"
             android:layout_width="29dp"
             android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/menu" />
+
+        <ImageView
+            android:id="@+id/btn_delect"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.983"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,8 +37,7 @@
             android:id="@+id/constraintLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            app:layout_constraintTop_toBottomOf="@+id/list"
+            app:layout_constraintTop_toBottomOf="@+id/btn_delect"
             tools:layout_editor_absoluteX="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,45 +101,36 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_marginBottom="3dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="550dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+            //숙제리스트 Worklist 사용; 과외별 숙제리스트만 출력해서 화면에 출력
+            //숙제클릭시 worklist_dialog사용해서 바로 제출가능하도록 연결
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/work_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="55dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/Navi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/tutition_select_menu" />
+                app:menu="@menu/tutition_select_menu"
+                tools:layout_editor_absoluteX="0dp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="550dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Navi"
-                app:layout_constraintVertical_bias="0.0">
-
-                //숙제리스트 Worklist 사용; 과외별 숙제리스트만 출력해서 화면에 출력
-                //숙제클릭시 worklist_dialog사용해서 바로 제출가능하도록 연결
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/work_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
