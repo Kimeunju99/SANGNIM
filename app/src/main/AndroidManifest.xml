@@ -12,17 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SANGNIM"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WorkActivity"></activity>
+<!--        <activity android:name=".LoginActivity"></activity>-->
         <!-- 앱 처음 빌드 시 먼저 실행되도록 intent-filter를 이동시켜줌-->
-        <activity android:name=".LoginActivity">
+        <activity android:name=".WorkActivity">
 
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".TuitionActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".MypageActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

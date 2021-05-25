@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setExpandableList() //메뉴바에 사용됨
 
+        val userName = intent.getStringExtra("userInputName")
+
+        user_name.text = userName.toString()
+
         //홈 페이지에 과제진행률을 나타내주는 리스트 ; Worklist,WorklistAdapter
         val workList = arrayListOf(
             Worklist(R.drawable.work, "4.4 ~ 4.8", "독해", "홍길동"),
@@ -120,5 +124,7 @@ class MainActivity : AppCompatActivity() {
         } else
             super.onBackPressed()
     }
+
+
 
 }

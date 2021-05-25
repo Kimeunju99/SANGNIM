@@ -13,6 +13,19 @@ data class ResultModel(
     var result : String
 )
 
+data class LoginModel(
+    @SerializedName("id")
+    var id : Int,
+    @SerializedName("pw")
+    var pw : String,
+    @SerializedName("name")
+    var name : String,
+    @SerializedName("age")
+    var age : Int,
+    @SerializedName("result")
+    var result : String
+)
+
 data class UserModel(
     @SerializedName("id")
     var id : Int,
@@ -24,7 +37,7 @@ data class UserModel(
     var age : Int
 )
 
-object Retrofit {
+object Retrofit{
 
 
     private val retrofit = Retrofit.Builder().baseUrl("http://118.67.131.137:3000").addConverterFactory(GsonConverterFactory.create()).build()
@@ -45,10 +58,25 @@ object Retrofit {
         })
     }
 
-    fun getUsersReq(callback: (ArrayList<UserModel>) -> Unit){
-//        var sql ="select * from users"
+    fun loginReq(id: Int, pw:String, callback: (LoginModel) -> Unit) {
+        var sql =" select * from users where id=${id} and pw='${pw}'"
 
-        service.getUsersReq().enqueue(object : Callback<ArrayList<UserModel>> {
+        service.loginReq(sql).enqueue(object: Callback<LoginModel> {
+            override fun onResponse(call: Call<LoginModel>, response: Response<LoginModel>) {
+                Log.d("test", "${response.body()}")
+                callback(response.body()!!)
+            }
+
+            override fun onFailure(call: Call<LoginModel>, t: Throwable) {
+                Log.d("test",t.message.toString())
+            }
+        })
+    }
+
+    fun getUsersReq(callback: (ArrayList<UserModel>) -> Unit){
+        var sql ="select * from users"
+
+        service.getUsersReq(sql).enqueue(object : Callback<ArrayList<UserModel>> {
             override fun onResponse(call: Call<ArrayList<UserModel>>, response:Response<ArrayList<UserModel>>){
                 callback(response.body()!!)
             }
@@ -57,4 +85,5 @@ object Retrofit {
             }
         })
     }
+
 }

@@ -17,16 +17,16 @@ class WorkActivity : AppCompatActivity() {
         setContentView(R.layout.activity_work)
 
         //숙제등록버튼 클릭시
-        work_new.setOnClickListener{
-            val intent = Intent(this, work_new::class.java)
-            startActivity(intent)
-        }
-
-        //지난 숙제버튼 클릭시시
-       work_lastlist.setOnClickListener{
-            val intent = Intent(this, work_lastlist::class.java)
-           startActivity(intent)
-        }
+//        work_new.setOnClickListener{
+//            val intent = Intent(this, work_new::class.java)
+//            startActivity(intent)
+//        }
+//
+//        //지난 숙제버튼 클릭시시
+//       work_lastlist.setOnClickListener{
+//            val intent = Intent(this, work_lastlist::class.java)
+//           startActivity(intent)
+//        }
 
     }
 }
