@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 //로그인 페이지
 class LoginActivity : AppCompatActivity() {
@@ -19,14 +20,11 @@ class LoginActivity : AppCompatActivity() {
         val btn_login = findViewById<Button>(R.id.btn_login)
         val btn_register = findViewById<Button>(R.id.btn_register)
         val textTest = findViewById<TextView>(R.id.text_test)
-
-
-
-        Retrofit.getUsersReq {
-            Log.d("test",it.get(it.lastIndex).toString())
-            textTest.text = it.get(it.lastIndex).name
-
-        }
+//
+//        Retrofit.getUsersReq {
+//            Log.d("test",it.get(it.lastIndex).toString())
+//            textTest.text = it.get(it.lastIndex).name
+//        }
 
         //회원가입버튼
         btn_register.setOnClickListener{
@@ -47,10 +45,14 @@ class LoginActivity : AppCompatActivity() {
             Retrofit.loginReq(userInputID, userInputPass){
                 if(it.result=="fail"){
                     Log.d("test","not")
+                    Toast.makeText(this, "가입정보가 없습니다.", Toast.LENGTH_SHORT).show()
                 }else {
                     Log.d("test",it.toString())
                     val intent =Intent(this, MainActivity::class.java)
-                    intent.putExtra("userInputName",it.name)
+                    intent.putExtra("userInputID",it.id)
+                    intent.putExtra("userInputPW",it.pw)
+                    intent.putExtra("userInputNAME",it.name)
+                    intent.putExtra("userInputAGE",it.age)
                     startActivity(intent)
                 }
             }

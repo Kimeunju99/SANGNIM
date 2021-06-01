@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,34 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TuitionActivity">
-
-    <!--과외 추가 버튼-->
-    <!--버튼 눌렸을 때 색상-->
-    <!--클릭 시 이벤트 추가 필요-->
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addtui_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        android:backgroundTint="#6799FF"
-        android:clickable="true"
-        app:rippleColor="#4374D9"
-        app:srcCompat="@drawable/ic_add" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/bottomblue"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:theme="?attr/actionBarTheme"/>
 
     <ImageView
         android:id="@+id/list"
@@ -49,12 +20,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/list">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ListView
             android:id="@+id/list_tui"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+        </ListView>
     </RelativeLayout>
 </RelativeLayout>
