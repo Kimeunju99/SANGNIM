@@ -2,12 +2,15 @@ package com.example.sangnim
 
 
 import android.app.Dialog
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.tuition_select.*
 
 //리사이클러뷰 사용
 class WorklistAdapter (val workList:ArrayList<Worklist>): RecyclerView.Adapter<WorklistAdapter.WorkListViewHolder>()
@@ -23,9 +26,13 @@ class WorklistAdapter (val workList:ArrayList<Worklist>): RecyclerView.Adapter<W
                 val curPos: Int = adapterPosition
                 val worklist : Worklist = workList.get(curPos)
 
-                //과제 제출(카메라연동을 통해)이 가능한 다이얼로그(worklist_dialog)
+                //과제 제출(카메라연동을 통해)이 가능한 다이얼로그(worklist_dialog)_학생일경우 숙제 제출
                 val dialog = Dialog(parent.context)
                 dialog.setContentView(R.layout.worklist_dialog)
+
+                //과제 삭제_선생님일 경우 숙제 삭제
+                val deletewui = Dialog(parent.context)
+                deletewui.setContentView(R.layout.deletewui_dialog)
 
             }
         }
