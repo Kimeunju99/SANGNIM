@@ -22,10 +22,13 @@ public class TuitionActivity: AppCompatActivity() {
             Tuitionlist("카테고리","타이틀","선생님","학생"),
             Tuitionlist("카테고리2","타이틀2","선생님2","학생2")
         )
-        // 데이터값을 tuition.xml 리스트에 뿌려준다
-        list_tui.layoutManager =LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+
+        // 데이터값을 tuition.xml 리스트에 뿌려준다  list_tui.layoutManager
+        list_tui.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         list_tui.setHasFixedSize(true)
         list_tui.adapter =TuitionlistAdapter(tuitionList)
+
+
 
 
 

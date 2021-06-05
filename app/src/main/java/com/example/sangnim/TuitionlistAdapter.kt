@@ -22,21 +22,35 @@ class TuitionlistAdapter(val tuitionList:ArrayList<Tuitionlist>) : RecyclerView.
             itemView.setOnClickListener {
 
                 //현재 리스트에서 클릭되는 위치(curPos)
-                val curPos: Int = adapterPosition
-                val tuitionlist: Tuitionlist = tuitionList.get(curPos)
+               val curPos: Int = adapterPosition
+               val tuitionlist: Tuitionlist = tuitionList.get(curPos)
 
-                //val intent =Intent(this, SelecttuitionActivity::class.java)
-                //startActivity(intent)
+                val teacherid =itemView.findViewById<TextView>(R.id.teacher)
+                val t_id = teacherid.getText().toString().toInt()
+                val req=Retrofit.teacheridReq(t_id){}
+                val ans =req.toString().toInt()
+
+                if(ans==1){ //선생님 아이디가 선생님 테이블에 존재하는 경우_아이템 클릭시 과제 삭제다이얼로그
+
+                    val intent =Intent(itemView?.context, TeacherSelecttuitionActivity::class.java)
+                    startActivity(itemView.context,intent,null)
+
+                }else{
+                     val intent =Intent(itemView?.context, SelecttuitionActivity::class.java)
+                     startActivity(itemView.context,intent,null)
+                }
+             //   val intent =Intent(this, SelecttuitionActivity::class.java)
+              //  startActivity(intent)
                 // 리스트 아이템 클릭 -> tuition_select 페이지로 이동 , selecttuitionActivity
 
             }
         }
     }
 
-    private fun Intent(tuitionListViewHolder: TuitionlistAdapter.TuitionListViewHolder, java: Class<SelecttuitionActivity>) {
+   // private fun Intent(tuitionListViewHolder: TuitionlistAdapter.TuitionListViewHolder, java: Class<SelecttuitionActivity>) {
 
 
-    }
+  //  }
 
     override fun getItemCount(): Int {
         return tuitionList.size
@@ -49,10 +63,10 @@ class TuitionlistAdapter(val tuitionList:ArrayList<Tuitionlist>) : RecyclerView.
         holder.student.text= tuitionList.get(position).student
 
         //item 클릭시 페이지 이동
-        holder.itemView.setOnClickListener {
-            val intent= android.content.Intent(holder.itemView?.context, SelecttuitionActivity::class.java)
-            startActivity(holder.itemView.context,intent,null)
-        }
+       // holder.itemView.setOnClickListener {
+         //   val intent= android.content.Intent(holder.itemView?.context, SelecttuitionActivity::class.java)
+          //  startActivity(holder.itemView.context,intent,null)
+        //}
 
     }
 

@@ -6,9 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TuitionActivity">
-    <!--과외 추가 버튼-->
-    <!--버튼 눌렸을 때 색상-->
-    <!--클릭 시 이벤트 추가 필요-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addtui_button"
@@ -41,10 +38,13 @@
         android:layout_marginTop="20dp"
         android:layout_below="@+id/list">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_tui"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     </RelativeLayout>
 
 </RelativeLayout>

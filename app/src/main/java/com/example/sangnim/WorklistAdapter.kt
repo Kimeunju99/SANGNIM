@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.tuition_select.*
+import kotlinx.android.synthetic.main.tuition_select_student.*
 
 //리사이클러뷰 사용
 class WorklistAdapter (val workList:ArrayList<Worklist>): RecyclerView.Adapter<WorklistAdapter.WorkListViewHolder>()
@@ -26,14 +26,18 @@ class WorklistAdapter (val workList:ArrayList<Worklist>): RecyclerView.Adapter<W
                 val curPos: Int = adapterPosition
                 val worklist : Worklist = workList.get(curPos)
 
-                //과제 제출(카메라연동을 통해)이 가능한 다이얼로그(worklist_dialog)_학생일경우 숙제 제출
-                val dialog = Dialog(parent.context)
-                dialog.setContentView(R.layout.worklist_dialog)
+                val teacherid =itemView.findViewById<TextView>(R.id.teacher)
+                val t_id = teacherid.getText().toString().toInt()
+                val req=Retrofit.teacheridReq(t_id){}
+                val ans =req.toString().toInt()
 
-                //과제 삭제_선생님일 경우 숙제 삭제
-                val deletewui = Dialog(parent.context)
-                deletewui.setContentView(R.layout.deletewui_dialog)
-
+                if(ans==1){ //선생님 아이디가 선생님 테이블에 존재하는 경우_아이템 클릭시 과제 삭제다이얼로그
+                    val deletewui = Dialog(parent.context)
+                    deletewui.setContentView(R.layout.deletewui_dialog)
+                }else{
+                    val dialog = Dialog(parent.context)
+                    dialog.setContentView(R.layout.worklist_dialog)
+                }
             }
         }
     }

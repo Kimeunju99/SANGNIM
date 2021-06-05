@@ -29,7 +29,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="20dp"
-        android:hint="학생 이름"
+        android:hint="학생 아이디"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
 
 
     <Button
-        android:id="@+id/btn_newtuition"
+        android:id="@+id/btn_newwork"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="176dp"

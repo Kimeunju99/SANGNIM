@@ -17,25 +17,31 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:text="확인을 누르면 과외가 종료됩니다.\n종료된 과외는 복구가 불가능합니다."
-        android:textSize="20dp"
+        android:text="삭제 시 과외정보 복구가 불가능합니다.\n정말 삭제하시겠습니까?"
+        android:textSize="20sp"
+        android:textColor="#FF0000"
         android:gravity="center"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
-    <Button
-        android:id="@+id/dig_OK"
-        android:text="확인"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"/>
-    <Button
-        android:id="@+id/dig_CANCLE"
-        android:text="취소"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15sp"
+            android:text="아이디"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/delstdid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:hint="삭제할 사람의 아이디를 입력하세요"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"/>
     </LinearLayout>
+
+
 </LinearLayout>

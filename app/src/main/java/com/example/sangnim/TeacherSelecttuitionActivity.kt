@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Toast
@@ -14,24 +13,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 //import kotlinx.android.synthetic.main.tuition_select.*
+import kotlinx.android.synthetic.main.tuition_select_student.*
+import kotlinx.android.synthetic.main.tuition_select_student.Navi
+import kotlinx.android.synthetic.main.tuition_select_student.btn_delect
 import kotlinx.android.synthetic.main.tuition_select_teacher.*
 import kotlinx.android.synthetic.main.work_lastlist.*
 
-class SelecttuitionActivity: AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-
+class TeacherSelecttuitionActivity: AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener{
+    
     //멤버변수 선언,지난 숙제도 만들때 여기 만들어 주면 된다
     private lateinit var worklist: Worklist
     private lateinit var worklastlist: Worklastlist
-
-    var studentid: Int = 0
-
-    companion object {
-        const val TAG: String = "로그"
+    
+    companion object{
+        const val TAG:String ="로그"
     }
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.tuition_select_student)
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.tuition_select_teacher)
 
 
         val workList = arrayListOf(
@@ -60,7 +60,7 @@ class SelecttuitionActivity: AppCompatActivity(), BottomNavigationView.OnNavigat
         work_lastlist.setHasFixedSize(true)
         work_lastlist.adapter = WorklastlistAdapter(worklastList)
 
-        //과외삭제버튼
+        //삭제버튼
         btn_delect.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.deletetui_dialog, null)
@@ -84,37 +84,38 @@ class SelecttuitionActivity: AppCompatActivity(), BottomNavigationView.OnNavigat
             }
         }
 
-            Navi.setOnNavigationItemSelectedListener(this)
-            //처음실행시 add 한번 실행시켜줘야하기 때문에 여기서 한번 실행되는 것
-            worklist = Worklist.newInstance()
-            supportFragmentManager.beginTransaction().add(R.id.tuition_frame, worklist).commit()
+        //숙제추가버튼
+        addtui_button.setOnClickListener {
+            val newwork = Dialog(this)
+            newwork.setContentView(R.layout.work_new)
         }
+        
+        Navi.setOnNavigationItemSelectedListener (this)
 
+        //처음실행시 add 한번 실행시켜줘야하기 때문에 여기서 한번 실행되는 것
+        worklist = Worklist.newInstance()
+        supportFragmentManager.beginTransaction().add(R.id.tuition_frame,worklist).commit()
+    }
 
-
-
-
+    
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        Log.d(TAG, "바텀바")
-
+        Log.d(TAG,"바텀바")
+        
         //바텀바 클릭시 이동
-        when (item.itemId) {
-            R.id.work_list -> {
+        when(item.itemId){
+            R.id.work_list->{
                 worklist = Worklist.newInstance()
-                supportFragmentManager.beginTransaction().replace(R.id.tuition_frame, worklist).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.tuition_frame,worklist).commit()
 
             }
-            R.id.lastwork_list -> {
+            R.id.lastwork_list->{
                 //지난 숙제를 보여줈 수 있는 class 필요
                 worklastlist = Worklastlist.newInstance()
                 //변경 필요==> worklist->worklastlist
-                supportFragmentManager.beginTransaction().replace(R.id.tuition_frame, worklastlist).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.tuition_frame,worklastlist).commit()
             }
         }
-
+        
         return true
-
     }
 }
-
-
