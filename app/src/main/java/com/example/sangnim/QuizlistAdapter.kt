@@ -14,7 +14,7 @@ class QuizlistAdapter(Quizlist1: QuizActivity, private val Quizlist: ArrayList<Q
         var QuizTeacher = view?.findViewById<TextView>(R.id.teacher)
         var QuizStudent = view?.findViewById<TextView>(R.id.student)
 
-        if (convertView == null) convertView = LayoutInflater.from(parent?.context).inflate(R.layout.quiz_item, parent, false)
+        if (convertView == null) convertView = LayoutInflater.from(parent?.context).inflate(R.layout.quiz_teacher, parent, false)
         val Quizlist = Quizlist[position]
 
         QuizTitle?.text = Quizlist.title

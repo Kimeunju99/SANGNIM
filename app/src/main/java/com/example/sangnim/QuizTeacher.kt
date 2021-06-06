@@ -22,17 +22,17 @@ class QuizTeacher : AppCompatActivity() {
 
 
         //퀴즈 추가
-        add_button.setOnClickListener{
+        quiz_add_button.setOnClickListener{
             val intent = Intent(this, add_quiz::class.java)
             startActivity(intent)
 
         }
 
-        /* var quiz_all = quiz_answer / quiz_count * 100
+        //var quiz_all = quiz_answer / quiz_count * 100
 
         //프로그레스 바
         val ProgCircle: ProgressBar = findViewById(R.id.hit_per)
-        ProgCircle.setProgress(quiz_all); // 퀴즈 계수에 따라 다르게*/
+        ProgCircle.setProgress(1); // 퀴즈 계수에 따라 다르게
     }
 
 }
